@@ -1,0 +1,16 @@
+#timer {
+    font-size: 140px;
+    text-align: center;
+    margin: 80px;
+    font-family: 'Major Mono Display', monospace;
+}
+
+button {
+    border-radius: 10px !important;
+}
+
+
+.timer-title {
+    margin: 40px;
+    font-family: monospace;
+}

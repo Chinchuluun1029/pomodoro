@@ -2,8 +2,21 @@
 let DEFAULT_TIME = 1500;
 let time = DEFAULT_TIME;
 
+let startButton = document.getElementById("startButton");
+    // continueButton = document.getElementById("continueButton");
+    // pauseButton = document.getElementById("pauseButton");
+    // stopButton = document.getElementById("stopButton");
+    // resetButton = document.getElementById("resetButton");
 
-document.getElementById("continueButton").style.display = "none";
+// continueButton.style.display = "none";
+
+let buttonClick = 0;
+startButton.innerHTML = "Start";
+
+startButton.addEventListener("click", function() {
+    ++buttonClick;
+})
+
 
 let minute = time / 60;
 let second = time % 60;
@@ -17,9 +30,20 @@ let timer = (minute.toFixed(0) + ":" + second);
 document.getElementById("timer").innerHTML = timer;
 
 let isStopped = false;
-let isRunning = false;
+    isFinished = false;
 
-let decrementTime = function decrement() {
+let decrementTime = setInterval(function() {
+    if (buttonClick == 0) {
+        isStopped = true;
+
+    } else if (buttonClick % 2 == 0) {
+        isStopped = true;
+        startButton.innerHTML = "Continue";
+    } else {
+        isStopped = false;
+        startButton.innerHTML = "Stop";
+    }
+
     if (time > 0 && !isStopped) {
         --time;
         minute = Math.floor(time / 60);
@@ -32,29 +56,16 @@ let decrementTime = function decrement() {
         timer = (minute.toFixed(0) + ":" + second);
         document.getElementById("timer").innerHTML = timer;
 
-        document.getElementById("startButton").style.display = "none";
-
-        isRunning = true;
-    } 
-}
-
-function stop() {
-    if(isRunning) {
-        isStopped = true;
-        document.getElementById("continueButton").style.display = "initial";
     }
-}
-
-
-function resetTime() {
-    time = DEFAULT_TIME;
-}
-
-function continueTime() {
-    if(!isRunning) {
-
+    if (time == 0) {
+        isFinished = true;
+        console.log("finished!");
+        return;
     }
-}
+
+    console.log("this is running");
+
+}, 1000)
 
 //make start to continue on right condition
 //make pause function, '
