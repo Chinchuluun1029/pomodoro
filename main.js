@@ -1,14 +1,9 @@
-
 let DEFAULT_TIME = 1500;
 let time = DEFAULT_TIME;
 
 let startButton = document.getElementById("startButton");
-    // continueButton = document.getElementById("continueButton");
-    // pauseButton = document.getElementById("pauseButton");
-    // stopButton = document.getElementById("stopButton");
-    // resetButton = document.getElementById("resetButton");
-
-// continueButton.style.display = "none";
+let answer = document.getElementById("answer");
+let answerSubmit = document.getElementById("answerSubmit");
 
 let buttonClick = 0;
 startButton.innerHTML = "Start";
@@ -25,7 +20,7 @@ if (second < 10 && second >= 0) {
     second = "0" + second;
 }
 
-let timer = (minute.toFixed(0) + ":" + second);
+let timer = (minute.toFixed(0) + second);
 
 document.getElementById("timer").innerHTML = timer;
 
@@ -53,8 +48,9 @@ let decrementTime = setInterval(function() {
             second = "0" + second;
         }
 
-        timer = (minute.toFixed(0) + ":" + second);
+        timer = (minute.toFixed(0) + "" + second);
         document.getElementById("timer").innerHTML = timer;
+        document.getElementById("timerTitle").innerHTML = (minute.toFixed(0) + ":" + second);
 
     }
     if (time == 0) {
@@ -67,6 +63,13 @@ let decrementTime = setInterval(function() {
 
 }, 1000)
 
-//make start to continue on right condition
-//make pause function, '
-//make stop right function, ending completely and restarting
+answer.addEventListener("keyup", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      console.log("Enter pressed");
+      answerSubmit.innerHTML = "Stop fucking lying";
+      // Trigger the button element with a click
+    }
+  });

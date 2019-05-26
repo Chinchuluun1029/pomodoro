@@ -12,9 +12,6 @@
 </head>
 
 <body>
-    <div class="row justify-content-center timer-title">
-        Pomodoro Timer
-    </div>
     
     <div class="container timerDiv">
         <h1 id="timer"></h1>
@@ -22,16 +19,20 @@
 
     <div class="buttonDiv row justify-content-center">
         <section id="buttons">
-            <button type="button" id="startButton" class="btn btn-primary" onclick="decrementTime">Start</button>
-            <!-- <button id="startButton" onclick="setInterval(decrementTime, 100)">Start</button>
-            <button id="continueButton" onclick="continueTime()">Continue</button>
-            <button id="pauseButton" onclick="pauseTime();">Pause</button>
-            <button id="stopButton" onclick="stop();">Stop</button>
-            <button id="resetButton" onclick="reset();">RESET</button> -->
+            <button type="button" id="startButton" class="btn btn-primary" onclick="decrementTime"><p>Start</p></button>
         </section>
     </div>
-    <h1>What are you focusing on this period?</h1>
-    <p>/User input here and start tracking progress/</p>
+    <div class="question row justify-content-center">
+        <h1>What are you focusing on this period?</h1>
+    </div>
+
+    
+    <div class="prompt row justify-content-center" style>
+                <input class="answer-input" type="text" name="answer" id="answer">
+                <span class="input" data-placeholder="THIS">
+                    <h1 id="answerSubmit" style="color: white;"></h1>
+                </span>
+    </div>
 
     <script src="main.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
