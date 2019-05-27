@@ -8,7 +8,7 @@ let answerSubmit = document.getElementById("answerSubmit");
 let buttonClick = 0;
 startButton.innerHTML = "Start";
 
-startButton.addEventListener("click", function() {
+startButton.addEventListener("click", function () {
     ++buttonClick;
 })
 
@@ -25,9 +25,9 @@ let timer = (minute.toFixed(0) + second);
 document.getElementById("timer").innerHTML = timer;
 
 let isStopped = false;
-    isFinished = false;
+isFinished = false;
 
-let decrementTime = setInterval(function() {
+let decrementTime = setInterval(function () {
     if (buttonClick == 0) {
         isStopped = true;
 
@@ -63,13 +63,10 @@ let decrementTime = setInterval(function() {
 
 }, 1000)
 
-answer.addEventListener("keyup", function(event) {
-    // Number 13 is the "Enter" key on the keyboard
-    if (event.keyCode === 13) {
-      // Cancel the default action, if needed
-      event.preventDefault();
-      console.log("Enter pressed");
-      answerSubmit.innerHTML = "Stop fucking lying";
-      // Trigger the button element with a click
+answer.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) { //"Enter" key
+        event.preventDefault();
+        console.log("Enter pressed");
+        answerSubmit.innerHTML = "Stop fucking lying";
     }
-  });
+});
