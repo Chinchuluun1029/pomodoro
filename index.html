@@ -21,9 +21,16 @@
 
     <div class="buttonDiv row justify-content-center">
         <section id="buttons">
-            <button type="button" id="startButton" class="btn btn-primary" onclick="decrementTime">
+            <button type="button" id="startButton" class="btn btn-primary" onclick="startTimer()">
                 <p>Start</p>
             </button>
+            <!-- DOWN HERE ARE SOME BUGGY SHIT. GO AT OWN RISK-->
+            <!-- <button type="button" id="pauseButton" class="btn btn-primary" onclick="pauseTimer()">
+                    <p>Pause</p>
+            </button>
+            <button type="button" id="resumeButton" class="btn btn-primary" onclick="resumeTimer()">
+                    <p>Resume</p>
+            </button> -->
         </section>
     </div>
     <div class="question row justify-content-center">
@@ -33,8 +40,11 @@
 
     <div class="prompt row justify-content-center" style>
         <input class="answer-input" type="text" name="answer" id="answer">
+    </div>
+
+    <div class="prompt row justify-content-center">
         <span class="input" data-placeholder="THIS">
-            <h1 id="answerSubmit" style="color: white;"></h1>
+                <h1 id="answerSubmit" style="color: white;"></h1>
         </span>
     </div>
 
