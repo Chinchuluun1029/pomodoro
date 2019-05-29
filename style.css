@@ -1,7 +1,7 @@
 #timer {
     font-size: 160px;
     text-align: center;
-    margin: 80px;
+    margin: 40px 0px;
     font-family: 'Major Mono Display', monospace;
     color: white;
 }
@@ -10,12 +10,19 @@ button {
     border-radius: 10px !important;
 
 }
-#startButton {
+#startButton, #stopButton {
     background-color: transparent;
     border-color: #fff;
     border: 2px solid white;
     padding: 10px 40px;
     font-size: 30px;
+}
+
+#breakTime {
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 60px;
 }
 
 
@@ -25,7 +32,8 @@ button {
 }
 
 .question {
-    margin: 40px 0px;
+    margin-top: 40px;
+    margin-bottom: 0px;
     color: white;
 }
 select {
@@ -82,31 +90,11 @@ body {
 }
 
 
-/* DEMO-SPECIFIC STYLES */
-.typewriter {
-    padding: 0 500px;
-}
-.typewriter h1 {
-    color: #fff;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid white; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation: 
-      typing 3.5s steps(30, end),
-      blink-caret .5s step-end infinite;
-  }
-  
-  /* The typing effect */
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
 
-  .prompt input {
+.prompt input {
     width: 50%;
     padding-top: 4px;
+    margin-top: -15px;
     display: block;
     background: 0;
     border: 0;
@@ -117,4 +105,4 @@ body {
     outline: 0;
     text-align: center;
     transition: border-color .2s ease;
-  }
+}
