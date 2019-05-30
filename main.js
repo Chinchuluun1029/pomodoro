@@ -30,6 +30,11 @@ answer.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) { //"Enter" key
         event.preventDefault();
         answerSubmit.innerHTML = document.getElementById("answer").value;
+        let wordLength = document.getElementById("answer").value.length;
+        if (wordLength < 50) {
+            wordLength = 120 / wordLength;
+        }
+        answerSubmit.style = " padding: 0px 20px; font-size: " + wordLength + "rem;";
         answer.style.display = "none";
     }
 });
