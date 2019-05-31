@@ -73,7 +73,7 @@ function startTimer(givenTime = DEFAULT_TIME) {
         } else {
             showTimer(--givenTime);
         }
-    }, 100);
+    }, 1000);
 }
 
 function stopTimer() {
