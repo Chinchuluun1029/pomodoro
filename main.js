@@ -1,4 +1,5 @@
 let DEFAULT_TIME = 1500;
+let DEFAULT_BREAK_TIME = 300;
 let time = DEFAULT_TIME;
 let pausedTime = 0;
 
@@ -31,10 +32,15 @@ answer.addEventListener("keyup", function (event) {
         event.preventDefault();
         answerSubmit.innerHTML = document.getElementById("answer").value;
         let wordLength = document.getElementById("answer").value.length;
+        let fontSize;
         if (wordLength < 50) {
-            wordLength = 120 / wordLength;
+            fontSize = 6;
+        } else if (wordLength < 100) {
+            fontSize = 2;
+        } else {
+            fontSize = 2;
         }
-        answerSubmit.style = " padding: 0px 20px; font-size: " + wordLength + "rem;";
+        answerSubmit.style = " padding: 20px 20px; font-size: " + fontSize + "rem;";
         answer.style.display = "none";
     }
 });
@@ -48,7 +54,7 @@ startButton.innerHTML = "Start";
 function startBreak() {
     breakTime.innerHTML = "Break Time";
     clearInterval(interval);
-    startTimer();
+    startTimer(DEFAULT_BREAK_TIME);
 }
 
 
@@ -67,7 +73,7 @@ function startTimer(givenTime = DEFAULT_TIME) {
         } else {
             showTimer(--givenTime);
         }
-    }, 1000);
+    }, 100);
 }
 
 function stopTimer() {
