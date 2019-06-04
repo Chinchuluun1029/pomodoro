@@ -14,8 +14,25 @@ button {
     background-color: transparent;
     border-color: #dbdbdb;
     border: 2px solid #dbdbdb;
+    color: #dbdbdb;
     padding: 10px 40px;
     font-size: 30px;
+}
+
+#removeAnswerButton {
+    background-color: transparent;
+    border-color: #dbdbdb;
+    border: 2px solid #dbdbdb;
+    color: #dbdbdb;
+    padding: 10px 20px;
+    margin: 0 30px;
+    font-size: 20px;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
 }
 
 #breakTime {
@@ -29,6 +46,7 @@ button {
     color: #dbdbdb;
     margin: 30px 10px;
 }
+
 
 
 .timer-title {

@@ -8,6 +8,9 @@ let answer = document.getElementById("answer");
 let answerSubmit = document.getElementById("answerSubmit");
 let stopButton = document.getElementById("stopButton");
 let breakTime = document.getElementById("breakTime");
+let removeAnswerButton = document.getElementById("removeAnswerButton");
+
+removeAnswerButton.style.display = "none";
 
 
 
@@ -33,15 +36,17 @@ answer.addEventListener("keyup", function (event) {
         answerSubmit.innerHTML = document.getElementById("answer").value;
         let wordLength = document.getElementById("answer").value.length;
         let fontSize;
-        if (wordLength < 50) {
+        if (wordLength < 30) {
             fontSize = 6;
-        } else if (wordLength < 100) {
+            removeAnswerButton.style = "margin: 40px 30px;"
+        } else if (wordLength < 60) {
             fontSize = 2;
         } else {
-            fontSize = 2;
+            fontSize = 1.5;
         }
-        answerSubmit.style = " padding: 20px 20px; font-size: " + fontSize + "rem;";
+        answerSubmit.style = "font-size: " + fontSize + "rem;";
         answer.style.display = "none";
+        // removeAnswerButton.style.display = "initial";
     }
 });
 
@@ -80,7 +85,7 @@ function stopTimer() {
     clearInterval(interval);
 }
 
-startButton.addEventListener("click", function () {
+startButton.addEventListener("click", () => {
     ++buttonClick;
     if (buttonClick % 2 == 1) {
         startTimer();
@@ -91,6 +96,11 @@ startButton.addEventListener("click", function () {
         stopTimer();
         startButton.innerHTML = "Restart";
     }
+})
+
+removeAnswerButton.addEventListener("click", () => {
+    console.log("Remove answer");
+    // document.getElementById("myForm").reset();
 })
 
 function showTimer(givenTime) {
